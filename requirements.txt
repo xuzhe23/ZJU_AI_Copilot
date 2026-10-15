@@ -1,0 +1,13 @@
+# ============ 离线核心（零额外安装即可跑通 demo）============
+# 以下依赖已在 yolov8 环境内（D:\anaconda3\envs\yolov8）：
+#   torch / opencv-python / pillow / numpy / requests / rapidocr-onnxruntime
+
+# ============ 可选：启用平台 API 与增强功能时按需安装 ============
+requests>=2.28            # 平台 HTTP 调用（环境内已有）
+dashscope>=1.20           # 千问官方 SDK（可选；本项目 chat 走 HTTP 兼容接口，不强制）
+openai>=1.40              # 若想用 openai SDK 替代（可选）
+apscheduler>=3.10         # 定时调度（可选）
+pypdf>=4.0                # PDF 解析（可选）
+python-docx>=1.1          # Word 解析（可选）
+openpyxl>=3.1             # Excel 读写（可选）
+gradio>=4.0               # 网页版 Demo（可选）

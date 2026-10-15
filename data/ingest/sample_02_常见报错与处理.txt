@@ -1,0 +1,18 @@
+常见报错与处理（实验室踩坑经验汇总）
+
+1. CUDA out of memory（显存不足）
+   - 现象：RuntimeError: CUDA out of memory.
+   - 处理：减小 batch_size；使用梯度累积；加 --amp 混合精度；释放其他占用显存的进程。
+
+2. driver version mismatch（驱动不匹配）
+   - 现象：NVIDIA driver is too old / CUDA driver version is insufficient.
+   - 处理：升级显卡驱动，或降低 torch 版本以匹配 CUDA。
+
+3. 训练 loss 不下降
+   - 处理：检查学习率是否过大；检查数据归一化；可视化输入样本；确认标签没有错位。
+
+4. 图片 OCR 识别中文不准
+   - 处理：先转灰度、放大、二值化预处理，再送入 rapidocr；复杂版面建议用千问/文档智能二次解析。
+
+5. 路径中文乱码
+   - 处理：Windows 下统一使用 pathlib.Path，读写文件指定 encoding="utf-8"。

@@ -1,0 +1,20 @@
+实验室深度学习环境配置 SOP（求是·研伴知识库）
+
+一、Conda 环境
+1. 本实验室使用 D:\anaconda3 作为基础环境，训练统一用 conda 环境 yolov8（Python 3.10.20）。
+2. 新建环境：conda create -n yourname python=3.10
+3. 激活环境：conda activate yourname
+
+二、CUDA 与 PyTorch
+1. 本机 CUDA 版本 11.8，PyTorch 安装命令：
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+2. 验证是否可用：python -c "import torch; print(torch.cuda.is_available(), torch.__version__)"
+
+三、常用库
+1. 目标检测：pip install ultralytics
+2. OCR 识别：pip install rapidocr-onnxruntime
+3. 图像处理：opencv-python、pillow、numpy
+
+四、注意事项
+1. 训练前务必确认 GPU 显存占用，避免多人同时抢占同一块卡。
+2. 数据集统一放在 /data/datasets 下，按 任务名/版本号 组织。
